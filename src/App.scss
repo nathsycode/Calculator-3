@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+$color-background: #62646d;
+$color-light: #e7ddcd;
+$color-dark: #262f32;
+$color-display: #212425;
+
+$color-text-total: #00d6cb8c;
+$color-text-display: #00d6cd;
+
+$color-key-clear: #cc5844;
+$color-key-operator: #769196;
+$color-key-number: #564c41;
+$color-key-decimal: #ccbd9f;
+$color-key-equal: #565a58;
+
+$background-image: url("./assets/Pixels.png");
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  display: flex;
+  background-image: $background-image;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: $color-background;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 100svh;
+
+  font-size: 1.6rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-light;
+  border-radius: 1rem;
+  width: 34rem;
+  height: 60rem;
+}
+
+.sec-display {
+  background: $color-dark;
+  padding: 3.5rem 2.5rem;
+  width: 100%;
+  height: 20rem;
+  border-radius: 1rem;
+
+  .display {
+    height: 100%;
+    width: 100%;
+
+    background-color: $color-display;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    grid-template-rows: 40% 60%;
+
+    #total {
+      color: $color-text-total;
+
+      font-size: 1.6rem;
+    }
+
+    #display {
+      color: $color-text-display;
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.sec-keypad {
+  background: $color-light;
+  width: 100%;
+  height: 100%;
+  padding: 3rem 3.5rem;
+  border-radius: 1rem;
+}
+
+.buttons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: $color-light;
+  display: grid;
+  padding: 5rem 2rem;
+  gap: 1rem;
+  border: 2px solid $color-dark;
+  border-radius: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "ac del divide multi"
+    "seven eight nine minus"
+    "four five six add"
+    "one two three equals"
+    "none zero decimal equals";
+
+  button {
+    border: none;
+    border-radius: 1rem;
+    color: $color-light;
+    font-size: 1.6rem;
+  }
+
+  .number {
+    background: $color-key-number;
+  }
+
+  .clear,
+  .delete {
+    background: $color-key-clear;
+  }
+
+  .operator {
+    background: $color-key-operator;
+  }
+
+  .decimal {
+    background: $color-key-decimal;
+    color: $color-dark;
+  }
+
+  .equals {
+    background: $color-key-equal;
+  }
+
+  #divide {
+    grid-area: divide;
+  }
+
+  #multiply {
+    grid-area: multi;
+  }
+
+  #seven {
+    grid-area: seven;
+  }
+
+  #eight {
+    grid-area: eight;
+  }
+
+  #nine {
+    grid-area: nine;
+  }
+
+  #subtract {
+    grid-area: minus;
+  }
+
+  #four {
+    grid-area: four;
+  }
+
+  #five {
+    grid-area: five;
+  }
+
+  #six {
+    grid-area: six;
+  }
+
+  #add {
+    grid-area: add;
+  }
+
+  #one {
+    grid-area: one;
+  }
+
+  #two {
+    grid-area: two;
+  }
+
+  #three {
+    grid-area: three;
+  }
+
+  #equals {
+    grid-area: equals;
+  }
+
+  #zero {
+    grid-area: zero;
+  }
+
+  #decimal {
+    grid-area: decimal;
+  }
+
+  .standard {
+    position: absolute;
+    background: $color-light;
+    top: -4.5%;
+    right: 8%;
+    padding-inline: 1rem;
+  }
+
+  #profile-link {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    translate: -50%;
+    text-decoration: none;
+    color: $color-dark;
+  }
+}
